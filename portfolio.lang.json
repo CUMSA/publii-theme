@@ -25,7 +25,6 @@
     }
   },
   "slider": {
-    "button": "Read more",
     "slide": "Slide %s"
   },
   "post": {
