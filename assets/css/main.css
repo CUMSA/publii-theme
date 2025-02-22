@@ -1203,7 +1203,8 @@ main {
       text-align: right; } }
 
 .post__header {
-  margin: 0 0 calc(1.5rem + 2vw); }
+  margin: 0 0 calc(1.5rem + 2vw); 
+  text-align: center; }
   .post__header > h1 {
     line-height: 1.2;
     margin-top: calc(3rem + 2vw); }
@@ -1211,10 +1212,10 @@ main {
       font-size: 1.42383rem; }
       @media screen and (min-width: 20rem) {
         .post__header > h1 {
-          font-size: calc(1.42383rem + 5.98233 * ((100vw - 20rem) / 113)); } }
+          font-size: clamp(1.5710900065rem, 1.5710900065rem + 1.424540906 * (100vw - 20rem) / 70, 2.9956309125rem) } }
       @media screen and (min-width: 133rem) {
         .post__header > h1 {
-          font-size: 7.40616rem; } }
+          font-size: 3.5rem; } }
 
 .post__image--left {
   float: left;
@@ -1744,13 +1745,13 @@ main {
       text-align: center; } }
   @media all and (min-width: 56.25em) {
     .footer {
-      bottom: 3rem;
-      position: fixed;
-      width: calc(100% - 6rem); } }
+      margin-top: 3rem;
+      padding: 1.5rem 0; 
+      text-align: center;} }
   @media all and (min-width: 56.25em) {
     .footer__social {
       bottom: 0;
-      position: absolute;
+      position: relative;
       left: calc(-1.5rem - 0.44444rem); } }
   .footer__social > a {
     display: block;
@@ -1762,7 +1763,7 @@ main {
     fill: rgba(78, 83, 96, 0.8);
     height: 0.88889rem;
     width: 0.88889rem; }
-  .footer__copyright {
+  .footer__copyright p {
     color: #7a7e88;
     font-size: 0.6243rem;
     letter-spacing: 0.08em;
@@ -1772,17 +1773,30 @@ main {
         padding: 0.75rem 0; } }
     @media all and (min-width: 56.25em) {
       .footer__copyright {
-        height: 1rem;
-        position: absolute;
-        right: calc(-1.5rem - 0.3rem);
-        -webkit-transform: rotate(-90deg) translateY(50%);
-        -ms-transform: rotate(-90deg) translateY(50%);
-        transform: rotate(-90deg) translateY(50%);
-        -webkit-transform-origin: left top;
-        -ms-transform-origin: left top;
-        transform-origin: left top;
-        white-space: nowrap;
-        width: 1rem; } }
+        white-space: nowrap; } }
+  .footer__sponsors {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    gap: 3rem;
+  }
+  .footer__sponsors__group {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 1rem;
+  }
+  .footer__sponsors__group__title {
+    font-family: 'PT Serif', serif;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #4e5360;
+    margin-bottom: 1.5rem;
+  }
+  .footer__sponsors__group img {
+    width: 200px;
+  }
 
 .icon {
   display: inline-block;
