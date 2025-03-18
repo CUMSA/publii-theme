@@ -14,7 +14,7 @@
             {{#if menus.mainMenu}}
                {{> menu menus.mainMenu}}
             {{/if}}
-            {{> search}}
+            {{!-- {{> search}} --}}
          </div>
       </header>
       {{#checkIf @config.custom.frontSource '==' "post" }}
@@ -198,4 +198,6 @@
             {{/checkIf}} 
          </main>
       {{/checkIf}}
-      {{> footer}}
+   </div>
+</body>
+</html>

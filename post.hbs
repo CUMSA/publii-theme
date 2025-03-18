@@ -20,6 +20,29 @@
       <main class="u-cutting">
          {{#post}}
             <article class="post {{#if @config.custom.postAside}}post--with-aside{{/if}}">
+            <header class="post__header">
+                  <h1>{{title}}</h1>
+                  {{#checkIfAny @config.post.displayAuthor @config.post.displayDate}}
+                     <p class="post__meta">
+                        {{#if @config.post.displayAuthor}}
+                           {{#author}}
+                              {{ translate 'post.publishedBy' }}
+                              <a href="{{url}}" rel="author" title="{{name}}">{{name}}</a>
+                           {{/author}}
+                        {{/if}}
+                        {{#if @config.post.displayDate}}
+                           <br/>{{ translate 'post.publishedOn' }}
+                           <time datetime="{{date createdAt 'YYYY-MM-DDTHH:mm'}}">
+                              {{#checkIf @config.custom.formatDate '!=' 'custom'}}
+                                 {{date createdAt @config.custom.formatDate}}
+                              {{else}}
+                                 {{date createdAt @config.custom.formatDateCustom}}
+                              {{/checkIf}}
+                           </time>
+                        {{/if}}
+                     </p>
+                  {{/checkIfAny}}
+               </header>
                {{#featuredImage}}
                   {{#if url}}
                      {{#checkIfAny caption credits}}
@@ -77,29 +100,7 @@
                      {{/checkIfAny}}
                   {{/if}}
                {{/featuredImage}}
-               <header class="post__header">
-                  <h1>{{title}}</h1>
-                  {{#checkIfAny @config.post.displayAuthor @config.post.displayDate}}
-                     <p class="post__meta">
-                        {{#if @config.post.displayAuthor}}
-                           {{#author}}
-                              {{ translate 'post.publishedBy' }}
-                              <a href="{{url}}" rel="author" title="{{name}}">{{name}}</a>
-                           {{/author}}
-                        {{/if}}
-                        {{#if @config.post.displayDate}}
-                           <br/>{{ translate 'post.publishedOn' }}
-                           <time datetime="{{date createdAt 'YYYY-MM-DDTHH:mm'}}">
-                              {{#checkIf @config.custom.formatDate '!=' 'custom'}}
-                                 {{date createdAt @config.custom.formatDate}}
-                              {{else}}
-                                 {{date createdAt @config.custom.formatDateCustom}}
-                              {{/checkIf}}
-                           </time>
-                        {{/if}}
-                     </p>
-                  {{/checkIfAny}}
-               </header>
+               
                <div class="post__entry">
                   {{#if @config.custom.lazyLoad}}
                      {{{lazyLoadForContentImages text @config.custom.lazyLoadEffect}}}

@@ -9,10 +9,9 @@
     "renderRelatedPosts": false,
     "renderSimilarPosts": true,
     "renderPrevNextPosts": false,
-    "createContentStructure": true,
     "create404page": true,
     "featuredPostsNumber": -1,
-    "createSearchPage": true,
+    "createSearchPage": false,
     "customHTML": {
       "afterPost": "After every post"
     }
